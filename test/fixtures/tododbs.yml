@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  content: MyText
+  priority: 1
+  status: 1
+  startDate: 2022-10-07 15:29:04
+  endDate: 2022-10-07 15:29:04
+  label: 1
+
+two:
+  title: MyString
+  content: MyText
+  priority: 1
+  status: 1
+  startDate: 2022-10-07 15:29:04
+  endDate: 2022-10-07 15:29:04
+  label: 1

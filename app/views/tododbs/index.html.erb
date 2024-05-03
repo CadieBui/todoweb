@@ -1,0 +1,42 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Tododbs</h1>
+<%= search_form_for @q do |f| %>
+  <%= f.label :title_cont %>
+  <%= f.search_field :title_cont %>
+
+  <%= f.label :content_cont %>
+  <%= f.search_field :content_cont %>
+
+  <%= f.submit name: "" %>
+<% end %>
+<table id="tododbs">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Priority</th>
+      <th>Status</th>
+      <th>Label</th>
+      <th>Start</th>
+      <th>End</th>
+      <th>Method</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <% @tododbs.each do |tododb| %>
+      <tr>
+        <td><%= link_to tododb.title, tododb %></td>
+        <td><%= tododb.priority %></td>
+        <td><%= tododb.status %></td>
+        <td><%= tododb.label %></td>
+        <td><%= tododb.startDate %></td>
+        <td><%= tododb.endDate %></td>
+        <td><%= link_to "Edit", edit_tododb_path(tododb) %></td>
+        <td><%= link_to "Show", tododb, method: :delete, data: {confirm: 'Are you sure?'} %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to "New", new_tododb_path %>
